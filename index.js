@@ -18,6 +18,7 @@ let lat;
 let long;
 let weatherType;
 
+//CODE HERE
 async function checkWeather(city) {
   const response = await fetch(apiUrl + `&appid=${apiKey}`);
   data = await response.json();
