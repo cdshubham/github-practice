@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+::selection {
+  color: yellow;
+  background: green;
+}
+
+body {
+  background: url("https://wallpaperaccess.com/full/1540010.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card {
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  height: 80vh;
+  width: 40vw;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.header img {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  height: 200px;
+  width: 300px;
+}
+
+#city {
+  position: absolute;
+  top: 9%;
+  left: 10%;
+  width: 22%;
+  height: 35px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Add a subtle border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: width 1s;
+}
+
+#city:focus {
+  width: 50%;
+}
+
+.temp {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: white;
+}
+
+.name {
+  position: absolute;
+  top: 340px;
+  left: 49.5%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: white;
+}
+
+.humidity {
+  height: 80px;
+  width: 180px;
+  background-color: rgb(206, 20, 20);
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  border-radius: 10px;
+  display: flex;
+  color: white;
+  font-size: 30px;
+  line-height: 70px;
+  justify-content: space-around;
+}
+
+.wind {
+  height: 80px;
+  width: 180px;
+  background-color: blue;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 10px;
+  display: flex;
+  color: white;
+  font-size: 25px;
+  line-height: 70px;
+  justify-content: space-around;
+}
+
+.click {
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Add a subtle border */
+  border-radius: 10px;
+  height: 50px;
+  width: 30%;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#city:focus + .click {
+  opacity: 1;
+}
+
+.rain {
+  background-image: url("rainyBackground.png");
+  height: 100vh;
+  animation: rain 0.5s linear infinite;
+  position: absolute;
+}
+
+@keyframes rain {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 10% 100%;
+  }
+}
+
+.cover {
+  position: relative;
+}
+
+.cloud {
+  background-image: url("cloudBackground.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  bottom: -250px;
+  position: relative;
+  z-index: -1;
+}
